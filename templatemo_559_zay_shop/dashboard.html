@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - BuyVerse Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <style>
+        .dashboard-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .dashboard-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-card .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #28a745;
+            padding: 20px;
+        }
+
+        .dashboard-card .card-header h5 {
+            margin: 0;
+            color: #28a745;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        .quick-action-btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+
+        .quick-action-btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .quick-action-btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .quick-action-btn-warning {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .quick-action-btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .quick-action-btn-info {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        .quick-action-btn-info:hover {
+            background-color: #138496;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+
+        .recent-order {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .recent-order:last-child {
+            border-bottom: none;
+        }
+
+        .order-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-delivered {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">order@buyverse.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">021-456-7890</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                BuyVerse
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                    </a>
+                    <a class="nav-icon position-relative text-decoration-none" href="dashboard.html">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <div class="container">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div>
+                    <div class="welcome-message">Welcome, John Doe!</div>
+                    <p class="mb-0">johndoe@example.com</p>
+                </div>
+            </div>
+            <div class="welcome-message" style="font-size: 18px; font-weight: 500;">
+                <i class="fa fa-calendar"></i> Last login: <span id="lastLogin">Today at 2:30 PM</span>
+            </div>
+        </div>
+    </div>
+    <!-- Close Dashboard Header -->
+
+    <!-- Main Dashboard Content -->
+    <section class="container mb-5">
+        <!-- Quick Stats -->
+        <div class="row mb-5">
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Total Orders</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-box">
+                    <div class="stat-number">$2,450</div>
+                    <div class="stat-label">Total Spent</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Delivered</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-box">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">In Progress</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-bolt"></i> Quick Actions</h5>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <button class="quick-action-btn quick-action-btn-success" onclick="openOrder()">
+                            <i class="fa fa-shopping-cart"></i> Place New Order
+                        </button>
+                        <button class="quick-action-btn quick-action-btn-info" onclick="viewOrders()">
+                            <i class="fa fa-list"></i> View My Orders
+                        </button>
+                        <button class="quick-action-btn quick-action-btn-warning" onclick="editProfile()">
+                            <i class="fa fa-edit"></i> Edit Profile
+                        </button>
+                        <button class="quick-action-btn logout-btn" onclick="logout()">
+                            <i class="fa fa-sign-out"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-history"></i> Recent Orders</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="recent-order">
+                            <div>
+                                <strong>Order #10245</strong>
+                                <p class="text-muted mb-0">2 items - $125.00</p>
+                            </div>
+                            <span class="order-status status-delivered"><i class="fa fa-check"></i> Delivered</span>
+                        </div>
+                        <div class="recent-order">
+                            <div>
+                                <strong>Order #10244</strong>
+                                <p class="text-muted mb-0">1 item - $50.00</p>
+                            </div>
+                            <span class="order-status status-delivered"><i class="fa fa-check"></i> Delivered</span>
+                        </div>
+                        <div class="recent-order">
+                            <div>
+                                <strong>Order #10243</strong>
+                                <p class="text-muted mb-0">3 items - $275.50</p>
+                            </div>
+                            <span class="order-status status-pending"><i class="fa fa-clock"></i> In Transit</span>
+                        </div>
+                        <div class="recent-order">
+                            <div>
+                                <strong>Order #10242</strong>
+                                <p class="text-muted mb-0">1 item - $89.99</p>
+                            </div>
+                            <span class="order-status status-pending"><i class="fa fa-clock"></i> Processing</span>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-outline-success" onclick="viewOrders()">View All Orders</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Settings -->
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-cog"></i> Account Settings</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <label class="text-muted">Email Address</label>
+                            <p class="mb-2">johndoe@example.com</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-muted">Phone Number</label>
+                            <p class="mb-2">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-muted">Membership</label>
+                            <p class="mb-0"><span class="badge bg-success">Premium Member</span></p>
+                        </div>
+                        <hr>
+                        <button class="btn btn-sm btn-primary w-100 mb-2" onclick="changePassword()">
+                            <i class="fa fa-key"></i> Change Password
+                        </button>
+                        <button class="btn btn-sm btn-warning w-100" onclick="manageAddresses()">
+                            <i class="fa fa-map-marker"></i> Manage Addresses
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-bell"></i> Notifications</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="orderUpdates" checked>
+                            <label class="form-check-label" for="orderUpdates">
+                                Order Updates
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="promotions" checked>
+                            <label class="form-check-label" for="promotions">
+                                Promotions & Offers
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="newsletter">
+                            <label class="form-check-label" for="newsletter">
+                                Weekly Newsletter
+                            </label>
+                        </div>
+                        <button class="btn btn-sm btn-success w-100 mt-3" onclick="saveNotifications()">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Main Content -->
+
+    <!-- Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row text-light">
+
+                <div class="col-md-4 pt-5">
+                    <h5 class="h5 text-light">BuyVerse Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-light">About us</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-light">Contact us</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h5 class="h5 text-light">Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html" class="text-decoration-none text-light">Luxury</a></li>
+                        <li><a href="shop.html" class="text-decoration-none text-light">Sport Wear</a></li>
+                        <li><a href="shop.html" class="text-decoration-none text-light">Men's</a></li>
+                        <li><a href="shop.html" class="text-decoration-none text-light">Women's</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h5 class="h5 text-light">Further Info</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-light">Home</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-light">About Us</a></li>
+                        <li><a href="shop.html" class="text-decoration-none text-light">Shop</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-light">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-center text-light py-5">
+                <div class="col-12">
+                    <p class="text-light">
+                        Copyright &copy; 2021 Company Name
+                        | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank" class="text-light">TemplateMo</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Close Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <form action="#" method="get" class="modal-body d-flex justify-content-center">
+                    <input type="search" class="form-control" id="inputModalSearch" name="search" placeholder="Search ...">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        // Button Click Actions
+        function openOrder() {
+            alert('Redirecting to Shop...');
+            window.location.href = 'shop.html';
+        }
+
+        function viewOrders() {
+            alert('Loading your orders...');
+            console.log('View Orders clicked');
+        }
+
+        function editProfile() {
+            alert('Opening Profile Editor...');
+            console.log('Edit Profile clicked');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                alert('Logging out...');
+                window.location.href = 'login.html';
+            }
+        }
+
+        function changePassword() {
+            alert('Opening Password Change Form...');
+            console.log('Change Password clicked');
+        }
+
+        function manageAddresses() {
+            alert('Opening Address Manager...');
+            console.log('Manage Addresses clicked');
+        }
+
+        function saveNotifications() {
+            alert('Notification preferences saved!');
+            console.log('Notifications saved');
+        }
+
+        // Update last login time
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit', 
+                hour12: true 
+            });
+            document.getElementById('lastLogin').textContent = 'Today at ' + timeString;
+        });
+    </script>
+    <!-- End Script -->
+
+</body>
+
+</html>

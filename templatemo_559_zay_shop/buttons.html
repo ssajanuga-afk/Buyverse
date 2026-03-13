@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Button Components - BuyVerse Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!-- Custom Button Styles -->
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <style>
+        body {
+            background-color: #f5f7fa;
+            padding-top: 20px;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-section h2 {
+            color: #28a745;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .button-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .demo-code {
+            background-color: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .demo-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .text-success {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-success" href="index.html">
+                <strong>BuyVerse Shop</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bootstrap-components.html">Components</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <h1 class="text-center text-success mb-5">Button Component System</h1>
+
+        <!-- Solid Color Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-paint-brush"></i> Solid Color Buttons</h2>
+            <p class="demo-description">Standard buttons with solid background colors</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-light">Light</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Outline Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-square-o"></i> Outline Buttons</h2>
+            <p class="demo-description">Buttons with transparent backgrounds and colored borders</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-outline-primary">Primary</button>
+                <button class="btn btn-outline-success">Success</button>
+                <button class="btn btn-outline-danger">Danger</button>
+                <button class="btn btn-outline-warning">Warning</button>
+                <button class="btn btn-outline-info">Info</button>
+                <button class="btn btn-outline-secondary">Secondary</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Button Sizes -->
+        <div class="demo-section">
+            <h2><i class="fa fa-expand"></i> Button Sizes</h2>
+            <p class="demo-description">Different button dimensions</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-success btn-xs">Extra Small</button>
+                <button class="btn btn-success btn-sm">Small</button>
+                <button class="btn btn-success">Normal</button>
+                <button class="btn btn-success btn-lg">Large</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Normal&lt;/button&gt;
+&lt;button class="btn btn-success btn-lg"&gt;Large&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Button States -->
+        <div class="demo-section">
+            <h2><i class="fa fa-toggle-on"></i> Button States</h2>
+            <p class="demo-description">Different button states</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-success">Normal</button>
+                <button class="btn btn-success active">Active</button>
+                <button class="btn btn-success" disabled>Disabled</button>
+                <button class="btn btn-success btn-loading" id="loadingBtn">Loading...</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success"&gt;Normal&lt;/button&gt;
+&lt;button class="btn btn-success active"&gt;Active&lt;/button&gt;
+&lt;button class="btn btn-success" disabled&gt;Disabled&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Button with Icons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-star"></i> Buttons with Icons</h2>
+            <p class="demo-description">Combine icons with buttons</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-success">
+                    <i class="fa fa-download"></i> Download
+                </button>
+                <button class="btn btn-danger">
+                    <i class="fa fa-trash"></i> Delete
+                </button>
+                <button class="btn btn-info">
+                    <i class="fa fa-pencil"></i> Edit
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add New
+                </button>
+                <button class="btn btn-dark btn-icon">
+                    <i class="fa fa-heart"></i>
+                </button>
+                <button class="btn btn-secondary btn-icon">
+                    <i class="fa fa-envelope"></i>
+                </button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success"&gt;
+    &lt;i class="fa fa-download"&gt;&lt;/i&gt; Download
+&lt;/button&gt;
+&lt;button class="btn btn-dark btn-icon"&gt;
+    &lt;i class="fa fa-heart"&gt;&lt;/i&gt;
+&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Gradient Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-magic"></i> Gradient Buttons</h2>
+            <p class="demo-description">Stylish gradient background buttons</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-gradient">Gradient Green</button>
+                <button class="btn btn-gradient-primary">Gradient Blue</button>
+                <button class="btn btn-gradient" style="background: linear-gradient(135deg, #ff6b6b 0%, #ff8e72 100%);">Gradient Red</button>
+                <button class="btn btn-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Gradient Purple</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-gradient"&gt;Gradient Green&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Special Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-lightbulb-o"></i> Special Buttons</h2>
+            <p class="demo-description">Unique and special button styles</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-success btn-pill">Pill Button</button>
+                <button class="btn btn-primary btn-raised">Raised Button</button>
+                <button class="btn btn-secondary btn-flat">Flat Button</button>
+                <button class="btn btn-success btn-glass">Glass Button</button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success btn-pill"&gt;Pill Button&lt;/button&gt;
+&lt;button class="btn btn-primary btn-raised"&gt;Raised Button&lt;/button&gt;
+&lt;button class="btn btn-secondary btn-flat"&gt;Flat Button&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Badges on Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-tag"></i> Buttons with Badges</h2>
+            <p class="demo-description">Add badges or notifications to buttons</p>
+            
+            <div class="button-showcase">
+                <button class="btn btn-success btn-with-badge">
+                    <i class="fa fa-bell"></i> Notifications
+                    <span class="btn-badge">5</span>
+                </button>
+                <button class="btn btn-danger btn-with-badge">
+                    <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="btn-badge">12</span>
+                </button>
+                <button class="btn btn-info btn-with-badge">
+                    <i class="fa fa-envelope"></i> Messages
+                    <span class="btn-badge">3</span>
+                </button>
+            </div>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success btn-with-badge"&gt;
+    &lt;i class="fa fa-bell"&gt;&lt;/i&gt; Notifications
+    &lt;span class="btn-badge"&gt;5&lt;/span&gt;
+&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- Button Groups -->
+        <div class="demo-section">
+            <h2><i class="fa fa-object-group"></i> Button Groups</h2>
+            <p class="demo-description">Group buttons together</p>
+            
+            <div class="button-showcase" style="flex-direction: column; gap: 20px;">
+                <div class="btn-group">
+                    <button class="btn btn-success">Left</button>
+                    <button class="btn btn-success">Center</button>
+                    <button class="btn btn-success">Right</button>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-outline-primary">View</button>
+                    <button class="btn btn-outline-primary">Edit</button>
+                    <button class="btn btn-outline-primary">Delete</button>
+                </div>
+            </div>
+
+            <div class="demo-code">
+&lt;div class="btn-group"&gt;
+    &lt;button class="btn btn-success"&gt;Left&lt;/button&gt;
+    &lt;button class="btn btn-success"&gt;Center&lt;/button&gt;
+    &lt;button class="btn btn-success"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+
+        <!-- Full Width Buttons -->
+        <div class="demo-section">
+            <h2><i class="fa fa-arrows-h"></i> Full Width Buttons</h2>
+            <p class="demo-description">Block level buttons</p>
+            
+            <button class="btn btn-success btn-lg btn-block" style="margin-bottom: 10px;">
+                <i class="fa fa-sign-in"></i> Login
+            </button>
+            <button class="btn btn-primary btn-lg btn-block" style="margin-bottom: 10px;">
+                <i class="fa fa-user-plus"></i> Register
+            </button>
+            <button class="btn btn-secondary btn-lg btn-block">
+                <i class="fa fa-times"></i> Cancel
+            </button>
+
+            <div class="demo-code">
+&lt;button class="btn btn-success btn-lg btn-block"&gt;
+    &lt;i class="fa fa-sign-in"&gt;&lt;/i&gt; Login
+&lt;/button&gt;
+            </div>
+        </div>
+
+        <!-- JavaScript Interactions -->
+        <div class="demo-section">
+            <h2><i class="fa fa-code"></i> JavaScript Interactions</h2>
+            <p class="demo-description">Dynamic button interactions using JavaScript</p>
+            
+            <div class="button-showcase" style="flex-direction: column; gap: 15px;">
+                <div>
+                    <h5>Loading State</h5>
+                    <button class="btn btn-success" id="asyncBtn" onclick="simulateAsync()">
+                        <i class="fa fa-spinner"></i> Perform Action
+                    </button>
+                </div>
+
+                <div>
+                    <h5>Toggle Button</h5>
+                    <button class="btn btn-warning" id="toggleBtn" onclick="toggleButton()">
+                        <i class="fa fa-toggle-off"></i> Toggle
+                    </button>
+                </div>
+
+                <div>
+                    <h5>Count Badge</h5>
+                    <button class="btn btn-info btn-with-badge" id="badgeBtn">
+                        <i class="fa fa-plus"></i> Increment
+                        <span class="btn-badge" id="badgeCount">0</span>
+                    </button>
+                </div>
+
+                <div>
+                    <h5>Disable/Enable</h5>
+                    <button class="btn btn-danger me-2" onclick="disableButton()">Disable</button>
+                    <button class="btn btn-success" onclick="enableButton()">Enable</button>
+                    <button class="btn btn-primary" id="toggleTargetBtn">Target Button</button>
+                </div>
+            </div>
+
+            <div class="demo-code">
+ButtonUtils.showLoading('asyncBtn');
+// ... perform operation ...
+ButtonUtils.hideLoading('asyncBtn');
+
+ButtonUtils.disable('toggleTargetBtn');
+ButtonUtils.enable('toggleTargetBtn');
+ButtonUtils.updateBadge('badgeBtn', newCount);
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2021 BuyVerse Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+
+    <script>
+        // Async operation simulation
+        function simulateAsync() {
+            ButtonUtils.showLoading('asyncBtn', 'Processing...');
+            
+            setTimeout(() => {
+                ButtonUtils.hideLoading('asyncBtn');
+                alert('Action completed successfully!');
+            }, 2000);
+        }
+
+        // Toggle button
+        function toggleButton() {
+            const btn = document.getElementById('toggleBtn');
+            const isToggled = btn.classList.toggle('active');
+            
+            if (isToggled) {
+                btn.innerHTML = '<i class="fa fa-toggle-on"></i> Toggle ON';
+                btn.classList.remove('btn-warning');
+                btn.classList.add('btn-success');
+            } else {
+                btn.innerHTML = '<i class="fa fa-toggle-off"></i> Toggle OFF';
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-warning');
+            }
+        }
+
+        // Badge increment
+        let badgeCount = 0;
+        document.getElementById('badgeBtn').addEventListener('click', function() {
+            badgeCount++;
+            document.getElementById('badgeCount').textContent = badgeCount;
+        });
+
+        // Disable button
+        function disableButton() {
+            ButtonUtils.disable('toggleTargetBtn');
+        }
+
+        // Enable button
+        function enableButton() {
+            ButtonUtils.enable('toggleTargetBtn');
+        }
+    </script>
+</body>
+
+</html>

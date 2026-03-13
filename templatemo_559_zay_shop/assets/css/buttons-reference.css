@@ -1,0 +1,531 @@
+/**
+ * Button Component CSS - Complete Reference
+ * =====================================================
+ * This file contains all button styling organized by purpose
+ */
+
+/* =====================================================
+   BASE BUTTON STYLES
+   ===================================================== */
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* =====================================================
+   COLOR VARIANTS - SOLID
+   ===================================================== */
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.btn-success:hover:not(:disabled) {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #333;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover:not(:disabled) {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover:not(:disabled) {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: white;
+    border-color: #343a40;
+}
+
+.btn-dark:hover:not(:disabled) {
+    background-color: #23272b;
+    border-color: #23272b;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    color: #333;
+    border-color: #f8f9fa;
+}
+
+.btn-light:hover:not(:disabled) {
+    background-color: #e2e6ea;
+    border-color: #e2e6ea;
+}
+
+/* =====================================================
+   COLOR VARIANTS - OUTLINE
+   ===================================================== */
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    background-color: transparent;
+}
+
+.btn-outline-success:hover:not(:disabled) {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: transparent;
+}
+
+.btn-outline-danger:hover:not(:disabled) {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+    background-color: transparent;
+}
+
+.btn-outline-warning:hover:not(:disabled) {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-outline-info {
+    color: #17a2b8;
+    border-color: #17a2b8;
+    background-color: transparent;
+}
+
+.btn-outline-info:hover:not(:disabled) {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    background-color: transparent;
+}
+
+.btn-outline-secondary:hover:not(:disabled) {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* =====================================================
+   SIZE VARIANTS
+   ===================================================== */
+
+.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.2rem;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border-radius: 0.75rem;
+}
+
+/* =====================================================
+   WIDTH VARIANTS
+   ===================================================== */
+
+.btn-block,
+.btn-w-100 {
+    display: block;
+    width: 100%;
+}
+
+.btn-half {
+    width: calc(50% - 5px);
+}
+
+.btn-third {
+    width: calc(33.333% - 5px);
+}
+
+/* =====================================================
+   SPECIAL STYLES
+   ===================================================== */
+
+/* Pill Button (Rounded Ends) */
+.btn-pill {
+    border-radius: 50rem;
+}
+
+/* Raised Button (With Shadow) */
+.btn-raised {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-raised:hover:not(:disabled) {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Flat Button (No Shadow) */
+.btn-flat {
+    box-shadow: none;
+}
+
+.btn-flat:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Glass Morphism Button */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-glass:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    color: white;
+}
+
+.btn-gradient:hover:not(:disabled) {
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+}
+
+.btn-gradient-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    color: white;
+}
+
+.btn-gradient-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+}
+
+/* =====================================================
+   ICON BUTTONS
+   ===================================================== */
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn i:only-child {
+    margin-right: 0;
+}
+
+.btn-icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   BUTTON WITH BADGE
+   ===================================================== */
+
+.btn-with-badge {
+    position: relative;
+}
+
+.btn-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 4px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================================================
+   BUTTON GROUP
+   ===================================================== */
+
+.btn-group {
+    display: inline-flex;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+}
+
+.btn-group .btn:first-child {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.btn-group .btn:last-child {
+    border-right: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.btn-group-vertical {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.btn-group-vertical .btn {
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.btn-group-vertical .btn:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.btn-group-vertical .btn:last-child {
+    border-bottom: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* =====================================================
+   BUTTON STATES
+   ===================================================== */
+
+.btn.active {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Focus State */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.btn-danger:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* =====================================================
+   BUTTON LABELS
+   ===================================================== */
+
+.btn-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-lg {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .btn-block {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* =====================================================
+   RIPPLE EFFECT
+   ===================================================== */
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.btn-ripple:active::before {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    to {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+
+.btn-no-shadow {
+    box-shadow: none !important;
+}
+
+.btn-custom-shadow {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-rounded {
+    border-radius: 0.75rem;
+}
+
+.btn-square {
+    border-radius: 0;
+}

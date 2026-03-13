@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Button Component - HTML CSS JS Complete</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        body {
+            background: #f5f7fa;
+            padding: 40px 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .code-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .code-section h2 {
+            color: #28a745;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .html-tag { color: #f92672; }
+        .html-attr { color: #a6e22e; }
+        .html-value { color: #e6db74; }
+        .html-text { color: #f8f8f2; }
+        .demo { 
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+        }
+        .demo-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .demo button {
+            margin: 5px;
+        }
+        h3 {
+            color: #333;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid #e9ecef;
+            margin: 20px 0;
+        }
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #f8f9fa;
+            border: none;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .tab.active {
+            background: white;
+            color: #28a745;
+            border-bottom-color: #28a745;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        .feature-item strong {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-custom">
+        <!-- Header -->
+        <div class="code-section" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white;">
+            <h1 style="margin: 0; color: white;">Button Component System</h1>
+            <p style="margin: 10px 0 0 0;">Complete HTML, CSS, and JavaScript Implementation</p>
+        </div>
+
+        <!-- =========================================
+             SECTION 1: HTML STRUCTURE
+             ========================================= -->
+        <div class="code-section">
+            <h2>1️⃣ HTML: Button Structure</h2>
+            
+            <h3>Basic Button</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-primary"</span>&gt;Click Me&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-primary">Click Me</button>
+            </div>
+
+            <h3>Button with Icon</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;
+    &lt;<span class="html-tag">i</span> <span class="html-attr">class</span>=<span class="html-value">"fa fa-download"</span>&gt;&lt;/<span class="html-tag">i</span>&gt; Download
+&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-success">
+                    <i class="fa fa-download"></i> Download
+                </button>
+            </div>
+
+            <h3>Button with Badge</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-danger btn-with-badge"</span> <span class="html-attr">id</span>=<span class="html-value">"notifyBtn"</span>&gt;
+    &lt;<span class="html-tag">i</span> <span class="html-attr">class</span>=<span class="html-value">"fa fa-bell"</span>&gt;&lt;/<span class="html-tag">i</span>&gt; Notifications
+    &lt;<span class="html-tag">span</span> <span class="html-attr">class</span>=<span class="html-value">"btn-badge"</span>&gt;5&lt;/<span class="html-tag">span</span>&gt;
+&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-danger btn-with-badge" id="notifyBtn">
+                    <i class="fa fa-bell"></i> Notifications
+                    <span class="btn-badge">5</span>
+                </button>
+            </div>
+
+            <h3>All Color Variants</h3>
+            <div class="code-block">
+&lt;!-- Primary --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-primary"</span>&gt;Primary&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Success (Green) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;Success&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Danger (Red) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-danger"</span>&gt;Danger&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Warning (Yellow) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-warning"</span>&gt;Warning&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Info (Cyan) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-info"</span>&gt;Info&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Secondary (Gray) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-secondary"</span>&gt;Secondary&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Dark (Black) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-dark"</span>&gt;Dark&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Light (White) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-light"</span>&gt;Light&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-dark">Dark</button>
+                <button class="btn btn-light">Light</button>
+            </div>
+
+            <h3>Outline Buttons</h3>
+            <div class="code-block">
+&lt;!-- Outline Primary --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-outline-primary"</span>&gt;Primary&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Outline Success --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-outline-success"</span>&gt;Success&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Outline Danger --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-outline-danger"</span>&gt;Danger&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-outline-primary">Primary</button>
+                <button class="btn btn-outline-success">Success</button>
+                <button class="btn btn-outline-danger">Danger</button>
+                <button class="btn btn-outline-warning">Warning</button>
+                <button class="btn btn-outline-info">Info</button>
+            </div>
+
+            <h3>Button Sizes</h3>
+            <div class="code-block">
+&lt;!-- Extra Small --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-xs"</span>&gt;XS&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Small --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-sm"</span>&gt;Small&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Normal (Default) --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;Normal&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Large --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-lg"</span>&gt;Large&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-success btn-xs">XS</button>
+                <button class="btn btn-success btn-sm">Small</button>
+                <button class="btn btn-success">Normal</button>
+                <button class="btn btn-success btn-lg">Large</button>
+            </div>
+
+            <h3>Special Button Styles</h3>
+            <div class="code-block">
+&lt;!-- Pill Style --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-pill"</span>&gt;Pill&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Gradient Style --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-gradient"</span>&gt;Gradient&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Glass Style --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-glass"</span>&gt;Glass&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- Full Width --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-block"</span>&gt;Full Width&lt;/<span class="html-tag">button</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button class="btn btn-success btn-pill">Pill</button>
+                <button class="btn btn-gradient">Gradient</button>
+                <button class="btn btn-glass">Glass</button>
+                <br><br>
+                <button class="btn btn-success btn-block">Full Width</button>
+            </div>
+
+            <h3>Button Groups</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">div</span> <span class="html-attr">class</span>=<span class="html-value">"btn-group"</span>&gt;
+    &lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;Left&lt;/<span class="html-tag">button</span>&gt;
+    &lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;Center&lt;/<span class="html-tag">button</span>&gt;
+    &lt;<span class="html-tag">button</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;Right&lt;/<span class="html-tag">button</span>&gt;
+&lt;/<span class="html-tag">div</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-success">Left</button>
+                    <button class="btn btn-success">Center</button>
+                    <button class="btn btn-success">Right</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================
+             SECTION 2: CSS STYLES
+             ========================================= -->
+        <div class="code-section">
+            <h2>2️⃣ CSS: Complete Button Styles</h2>
+            
+            <h3>All Button Classes Available:</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Colors:</strong>
+                    <br>.btn-primary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-secondary, .btn-dark, .btn-light
+                </div>
+                <div class="feature-item">
+                    <strong>Outlined:</strong>
+                    <br>.btn-outline-primary, .btn-outline-success, .btn-outline-danger, etc.
+                </div>
+                <div class="feature-item">
+                    <strong>Sizes:</strong>
+                    <br>.btn-xs, .btn-sm, .btn (normal), .btn-lg
+                </div>
+                <div class="feature-item">
+                    <strong>Styles:</strong>
+                    <br>.btn-pill, .btn-gradient, .btn-glass, .btn-flat, .btn-raised
+                </div>
+                <div class="feature-item">
+                    <strong>Special:</strong>
+                    <br>.btn-block, .btn-icon, .btn-with-badge, .btn-ripple
+                </div>
+                <div class="feature-item">
+                    <strong>States:</strong>
+                    <br>.active, :disabled, .btn-loading
+                </div>
+            </div>
+
+            <h3>CSS File Location:</h3>
+            <div class="code-block">
+/assets/css/buttons.css  (Main button styles)
+/assets/css/buttons-reference.css  (Detailed reference)
+            </div>
+
+            <h3>How CSS Works:</h3>
+            <div class="code-block">
+/* Base button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+/* Color variant example */
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Size variant example */
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* Special style example */
+.btn-pill {
+    border-radius: 50rem;
+}
+            </div>
+        </div>
+
+        <!-- =========================================
+             SECTION 3: JAVASCRIPT
+             ========================================= -->
+        <div class="code-section">
+            <h2>3️⃣ JavaScript: Button Functionality</h2>
+            
+            <h3>Include JavaScript File:</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">script</span> <span class="html-attr">src</span>=<span class="html-value">"assets/js/buttons.js"</span>&gt;&lt;/<span class="html-tag">script</span>&gt;
+            </div>
+
+            <h3>Basic Click Handler:</h3>
+            <div class="code-block">
+ButtonUtils.on('myBtn', function() {
+    alert('Button clicked!');
+});
+            </div>
+
+            <h3>Show Loading State:</h3>
+            <div class="code-block">
+&lt;<span class="html-tag">button</span> <span class="html-attr">id</span>=<span class="html-value">"submitBtn"</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success"</span>&gt;
+    Submit
+&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;<span class="html-tag">script</span>&gt;
+ButtonUtils.on('submitBtn', function() {
+    ButtonUtils.showLoading('submitBtn', 'Processing...');
+    
+    // Simulate work
+    setTimeout(function() {
+        ButtonUtils.hideLoading('submitBtn');
+        alert('Done!');
+    }, 2000);
+});
+&lt;/<span class="html-tag">script</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo:</div>
+                <button id="submitBtn" class="btn btn-success">Submit</button>
+            </div>
+
+            <h3>Add Badge to Button:</h3>
+            <div class="code-block">
+&lt;!-- Create button with ID --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">id</span>=<span class="html-value">"cartBtn"</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-warning"</span>&gt;
+    &lt;<span class="html-tag">i</span> <span class="html-attr">class</span>=<span class="html-value">"fa fa-shopping-cart"</span>&gt;&lt;/<span class="html-tag">i</span>&gt; Cart
+&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;<span class="html-tag">script</span>&gt;
+// Add badge with count
+ButtonUtils.addBadge('cartBtn', 5);
+
+// Or update existing badge
+ButtonUtils.updateBadge('cartBtn', 10);
+
+// Remove badge
+ButtonUtils.removeBadge('cartBtn');
+&lt;/<span class="html-tag">script</span>&gt;
+            </div>
+
+            <h3>Disable/Enable Button:</h3>
+            <div class="code-block">
+ButtonUtils.disable('myBtn');    // Disable button
+ButtonUtils.enable('myBtn');     // Enable button
+
+// Check state
+if (ButtonUtils.isDisabled('myBtn')) {
+    console.log('Button is disabled');
+}
+            </div>
+
+            <h3>Create Button Dynamically:</h3>
+            <div class="code-block">
+let btn = ButtonUtils.create({
+    className: 'btn btn-success btn-lg',
+    text: 'Dynamic Button',
+    id: 'dynBtn',
+    onClick: function() {
+        alert('I was created with JavaScript!');
+    }
+});
+
+document.body.appendChild(btn);
+            </div>
+
+            <h3>All ButtonUtils Methods:</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Loading:</strong>
+                    <br>showLoading(id) • hideLoading(id)
+                </div>
+                <div class="feature-item">
+                    <strong>State:</strong>
+                    <br>disable(id) • enable(id) • isDisabled(id)
+                </div>
+                <div class="feature-item">
+                    <strong>Text:</strong>
+                    <br>setText(id, text)
+                </div>
+                <div class="feature-item">
+                    <strong>Badge:</strong>
+                    <br>addBadge(id, count) • updateBadge(id, count) • removeBadge(id)
+                </div>
+                <div class="feature-item">
+                    <strong>Events:</strong>
+                    <br>on(id, callback) • async(id, asyncFunc)
+                </div>
+                <div class="feature-item">
+                    <strong>Creation:</strong>
+                    <br>create(options) • createGroup(buttons)
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================
+             SECTION 4: COMPLETE EXAMPLE
+             ========================================= -->
+        <div class="code-section">
+            <h2>4️⃣ Complete Working Example</h2>
+            
+            <h3>HTML + CSS + JavaScript Together:</h3>
+            <div class="code-block">
+&lt;!-- HTML --&gt;
+&lt;<span class="html-tag">button</span> <span class="html-attr">id</span>=<span class="html-value">"completeBtn"</span> <span class="html-attr">class</span>=<span class="html-value">"btn btn-success btn-lg"</span>&gt;
+    &lt;<span class="html-tag">i</span> <span class="html-attr">class</span>=<span class="html-value">"fa fa-check"</span>&gt;&lt;/<span class="html-tag">i</span>&gt; Complete Task
+&lt;/<span class="html-tag">button</span>&gt;
+
+&lt;!-- CSS is in buttons.css --&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;<span class="html-tag">script</span> <span class="html-attr">src</span>=<span class="html-value">"assets/js/buttons.js"</span>&gt;&lt;/<span class="html-tag">script</span>&gt;
+
+&lt;<span class="html-tag">script</span>&gt;
+ButtonUtils.on('completeBtn', function() {
+    // Show loading
+    ButtonUtils.showLoading('completeBtn', 'Processing...');
+    
+    // Simulate API call
+    setTimeout(function() {
+        // Hide loading
+        ButtonUtils.hideLoading('completeBtn');
+        
+        // Show success
+        alert('✅ Task completed!');
+    }, 2000);
+});
+&lt;/<span class="html-tag">script</span>&gt;
+            </div>
+            <div class="demo">
+                <div class="demo-title">Live Demo (Click the button):</div>
+                <button id="completeBtn" class="btn btn-success btn-lg">
+                    <i class="fa fa-check"></i> Complete Task
+                </button>
+            </div>
+        </div>
+
+        <!-- =========================================
+             SECTION 5: FILES SUMMARY
+             ========================================= -->
+        <div class="code-section">
+            <h2>5️⃣ Files Reference</h2>
+            
+            <h3>CSS Files:</h3>
+            <ul style="line-height: 2;">
+                <li>📄 <code>assets/css/buttons.css</code> - Main button styles (USE THIS)</li>
+                <li>📄 <code>assets/css/buttons-reference.css</code> - Detailed CSS reference</li>
+            </ul>
+
+            <h3>JavaScript Files:</h3>
+            <ul style="line-height: 2;">
+                <li>📄 <code>assets/js/buttons.js</code> - Core functionality (USE THIS)</li>
+                <li>📄 <code>assets/js/buttons-reference.js</code> - Complete API docs</li>
+            </ul>
+
+            <h3>HTML Demo Files:</h3>
+            <ul style="line-height: 2;">
+                <li>📄 <code>buttons.html</code> - Interactive demo page</li>
+                <li>📄 <code>button-components.html</code> - Ready-to-copy templates</li>
+                <li>📄 <code>button-guide.html</code> - Quick start guide</li>
+                <li>📄 <code>button-complete.html</code> - This file (complete reference)</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="code-section" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; text-align: center;">
+            <h2 style="color: white; border-bottom-color: white;">✅ Ready to Use!</h2>
+            <p>All files are integrated into your project. Start using buttons now!</p>
+            <p style="margin: 0; opacity: 0.9;">Visit <strong>buttons.html</strong> for more interactive examples →</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/buttons.js"></script>
+
+    <script>
+        // Complete button example
+        ButtonUtils.on('completeBtn', function() {
+            ButtonUtils.showLoading('completeBtn', 'Processing...');
+            
+            setTimeout(function() {
+                ButtonUtils.hideLoading('completeBtn');
+                alert('✅ Task completed successfully!');
+            }, 2000);
+        });
+
+        // Submit button example
+        ButtonUtils.on('submitBtn', function() {
+            ButtonUtils.showLoading('submitBtn', 'Submitting...');
+            
+            setTimeout(function() {
+                ButtonUtils.hideLoading('submitBtn');
+                alert('✅ Form submitted!');
+            }, 2000);
+        });
+
+        console.log('✅ Button Component System Ready!');
+        console.log('Use ButtonUtils.* methods for interactions');
+    </script>
+</body>
+</html>
